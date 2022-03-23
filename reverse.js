@@ -12,3 +12,8 @@ substring: lo char l
 substring: llo char e
 substring: ello char h
 olleh*/
+
+function reverse(str) {
+  if (str.length <= 1) return str;
+  return reverse(str.slice(1)) + str[0];
+}

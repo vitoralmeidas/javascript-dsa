@@ -1,4 +1,4 @@
-//find the maximum product obtaind from multiplying 2 adjacent number
+//find the maximum product obtained from multiplying 2 adjacent number
 const adjacentElementsNumber = (array) => {
   let newArray = [];
 

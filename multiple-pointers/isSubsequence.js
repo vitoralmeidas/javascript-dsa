@@ -15,12 +15,12 @@ Your solution MUST have AT LEAST the following complexities:
     Space Complexity - O(1)
 */
 
-const isSubsequence = (str1, str2)  => {
-    let i = 0;
+const isSubsequence = (str1, str2) => {
+  let i = 0;
 
-    for (let j = 0; j < str2.length; j++) {
-        if( i == str1.length - 1) return true;
-        if(str1[i] === str2[j]) i++;
-    }
-    return false
-}
+  for (let j = 0; j < str2.length; j++) {
+    if (i == str1.length - 1) return true;
+    if (str1[i] === str2[j]) i++;
+  }
+  return false;
+};

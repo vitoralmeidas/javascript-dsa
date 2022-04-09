@@ -7,7 +7,21 @@
 
 const bubbleSort = arr => {
     for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
-        
+        for(let j = 0; j < arr.length; j++){
+            console.log(arr);
+            if (arr[j] > arr[j+1]) {
+                //Swap
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;   
+            }
+        }        
     }
+
+    return arr;
 }
+
+bubbleSort([37, 45, 29, 8])
+bubbleSort([15, 2, 9, 1])
+bubbleSort([3, 5, 29, 1])
+bubbleSort([1, 8, 27, 10])

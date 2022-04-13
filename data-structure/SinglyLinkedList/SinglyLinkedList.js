@@ -12,7 +12,23 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
-  /*
+  push(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+}
+
+let list = new SinglyLinkedList(0);
+console.log(list.push(10));
+/*
     Method push()
     - This function should accept a value/;
     - Create an new node using the value passed to the function
@@ -22,12 +38,3 @@ class SinglyLinkedList {
     - Increment the length by one
     - return the list (this)
     */
-
-  push() {
-    let newNode = new Node(val);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    }
-  }
-}

@@ -44,6 +44,7 @@ class SinglyLinkedList {
     - Decrement the length of the list by 1
     - Return the value if the node removed
   */
+
   pop() {
     if (!this.head) return undefined;
     let current = this.head;
@@ -69,6 +70,7 @@ class SinglyLinkedList {
   - Decrement the length by 1
   - Return the value of the node removed
   */
+
   shift() {
     if (!this.head) return undefined;
     let lastHead = this.head;
@@ -101,6 +103,10 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  /*
+  
+  */
 }
 
 let list = new SinglyLinkedList();

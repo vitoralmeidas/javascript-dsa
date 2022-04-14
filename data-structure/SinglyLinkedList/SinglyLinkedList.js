@@ -167,7 +167,17 @@ class SinglyLinkedList {
   - Decrement the length
   - Return the value of the node removed
   */
-  remove(index) {}
+  remove(index) {
+    if (index < 0 || index > this.length) return undefined;
+    if (index === this.length - 1) return pop();
+    if (index === 0) return this.shift();
+
+    let prevNode = this.get(index - 1);
+    let current = prevNode.next;
+    prevNode.next = current.next;
+    this.length--;
+    return current;
+  }
 }
 
 let list = new SinglyLinkedList();

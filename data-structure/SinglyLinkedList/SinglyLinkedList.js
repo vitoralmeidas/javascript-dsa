@@ -127,7 +127,12 @@ class SinglyLinkedList {
     - If the node is found, set the value of that node to be the value passed to the function and return true
    */
 
-  set() {}
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (!foundNode) return false;
+    foundNode.val = val;
+    return true;
+  }
 }
 
 let list = new SinglyLinkedList();

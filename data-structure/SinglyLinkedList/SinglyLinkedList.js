@@ -133,6 +133,12 @@ class SinglyLinkedList {
     foundNode.val = val;
     return true;
   }
+
+  /*
+  
+  */
+
+  insert() {}
 }
 
 let list = new SinglyLinkedList();

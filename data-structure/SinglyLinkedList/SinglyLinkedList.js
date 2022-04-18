@@ -178,6 +178,12 @@ class SinglyLinkedList {
     this.length--;
     return current;
   }
+
+  /*
+  
+  */
+
+  reverse() {}
 }
 
 let list = new SinglyLinkedList();

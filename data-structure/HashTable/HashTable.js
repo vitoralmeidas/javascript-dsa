@@ -44,9 +44,18 @@ class HashTable {
      - Accepts a key
      - Hashes the key
      - Retrieves the key-value pair in the hash table 
+     - If the key isn't found, return undefined
      */
 
      get(key) {
-         
-     }
+        let index = this._hash(key);
+        if(this.keyMap[index]) {
+            for(let i = 0; i < this.keyMap[index].length; i++){
+                if(this.keyMap[index][i][0] === key) {
+                    return this.keyMap[index][i][1];
+                }
+            }
+        }
+        return undefined;
+    }
 }

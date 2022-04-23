@@ -8,6 +8,7 @@ const maskify = (cc) =>{
 }
 
 console.log(maskify('64607935616'));
+
 const threeOrFive = (number) => {
   let sum = 0;
   for (let i = 0; i < number; i++) {
@@ -17,7 +18,4 @@ const threeOrFive = (number) => {
   }
   return sum;
 };
-console.log(threeOrFive(10));
-
-
-
+console.log(threeOrFive(10))

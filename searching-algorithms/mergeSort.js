@@ -56,3 +56,4 @@ const mergeSort = (arr) => {
     return merge(left, rigth);
 }
 console.log(mergeSort([10, 24, 76, 73, 72, 1, 9]));
+

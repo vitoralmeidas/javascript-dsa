@@ -2,7 +2,7 @@ class HashTable {
     constructor(size=53) {
         this.keyMap = new Array(size); // length Array
     }
-
+    
     _hash(key) {
         // the index of our key
         let total = 0;

@@ -25,6 +25,7 @@ class HashTable {
         SET 
      - Accepts a key and a value
      - Hashes the key
+     - Check if there is something in index on keyMap
      - Stores the key-value pair in the hash table array via separate chaining
     */
 
@@ -36,5 +37,16 @@ class HashTable {
         }
         // add in keyMap a new array where already exist something in that index
         this.keyMap[index].push([key, value]);
+     }
+
+     /*
+        GET
+     - Accepts a key
+     - Hashes the key
+     - Retrieves the key-value pair in the hash table 
+     */
+
+     get(key) {
+         
      }
 }

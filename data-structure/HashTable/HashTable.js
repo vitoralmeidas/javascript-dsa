@@ -22,7 +22,7 @@ class HashTable {
   }
 
   /*
-			SET 
+		SET 
 		 - Accepts a key and a value
 		 - Hashes the key
 		 - Check if there is something in index on keyMap
@@ -40,7 +40,7 @@ class HashTable {
   }
 
   /*
-			GET
+		GET
 		 - Accepts a key
 		 - Hashes the key
 		 - Retrieves the key-value pair in the hash table 
@@ -60,8 +60,8 @@ class HashTable {
   }
 
   /*
-			VALUES
-		 - Loops through the hash table array and return an array of values in the table
+		VALUES
+		 - Loops through the hash table array and returns an array of values in the table
 	*/
 
   values() {
@@ -77,5 +77,24 @@ class HashTable {
       }
     }
     return valuesArr;
+  }
+
+  /*
+        KEYS 
+		 - Loops through the hash table array and returns an array of keys in the table
+  */
+  keys() {
+    let keysArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          // duplicates keys
+          if (!keysArr.includes(this.keyMap[i][j][0])) {
+            keysArr.push(this.keyMap[i][j][0]);
+          }
+        }
+      }
+    }
+    return keysArr;
   }
 }

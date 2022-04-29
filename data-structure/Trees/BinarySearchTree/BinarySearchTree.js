@@ -83,6 +83,7 @@ class BinarySearchTree {
     return current;
   }
 
+  // boolean method, another way for find();
   contains(value) {
     if (this.root === null) return false;
     let current = this.root;

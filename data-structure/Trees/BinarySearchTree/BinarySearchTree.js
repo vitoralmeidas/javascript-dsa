@@ -95,6 +95,29 @@ class BinarySearchTree {
     }
     return false;
   }
+
+  /*
+      -Breathe First Search BFS
+    - Create a queue (this can be an array) and a variable to store the values of nodes visited
+    - Place the root no in the queue
+    - Loop as long as there is anything in the queue
+      - Dequeue a node from the queue and push the value of the no into the variable that stores
+        the nodes
+      - If there is a left property on the node dequeued - add it to the queue 
+      - If there is a right property on the node dequeued - add it to the queue
+    - Return the variable that stores the values
+  */
+  BFS() {
+    let node = this.root;
+    let queue = [];
+    let data = [];
+    queue.push(node);
+
+    while (queue.length) {
+      node = queue.shift;
+      data.push(node);
+    }
+  }
 }
 
 // let tree = new BinarySearchTree();

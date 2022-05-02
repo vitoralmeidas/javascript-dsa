@@ -148,7 +148,7 @@ class BinarySearchTree {
 
   /*
       -DFSPostOrder
-        - Create a variable to store the values of nodes visited
+    - Create a variable to store the values of nodes visited
     - Store the root of the BST in a variable called current
     - Write a helper function which accepts a node
       - If the node has a left property, call the helper function with the left property on the node
@@ -158,7 +158,16 @@ class BinarySearchTree {
     - Return the array of values
   */
 
-  DFSPostOrder() {}
+  DFSPostOrder() {
+    let data = [];
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    };
+    traverse(this.root);
+    return data;
+  }
 }
 
 // let tree = new BinarySearchTree();

@@ -135,7 +135,16 @@ class BinarySearchTree {
     - Return the array of values
   */
 
-  DFSPreOrder() {}
+  DFSPreOrder() {
+    let data = [];
+    const traverse = (node) => {
+      data.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return data;
+  }
 }
 
 // let tree = new BinarySearchTree();

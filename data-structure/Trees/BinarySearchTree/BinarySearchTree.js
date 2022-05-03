@@ -198,6 +198,14 @@ class BinarySearchTree {
     let allValues = this.BFS();
     return allValues.length;
   }
+
+  //print values from min -> max
+  print() {
+    let allValues = this.DFSInOrder();
+    for (let i = 0; i < allValues.length; i++) {
+      console.log(allValues[i]);
+    }
+  }
 }
 
 // let tree = new BinarySearchTree();

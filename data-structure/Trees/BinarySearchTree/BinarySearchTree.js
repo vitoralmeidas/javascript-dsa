@@ -194,7 +194,10 @@ class BinarySearchTree {
 
   // get count of values stored
 
-  getNodeCount() {}
+  getNodeCount() {
+    let allValues = this.BFS();
+    return allValues.length;
+  }
 }
 
 // let tree = new BinarySearchTree();

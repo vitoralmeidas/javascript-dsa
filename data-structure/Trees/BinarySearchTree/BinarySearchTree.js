@@ -191,6 +191,10 @@ class BinarySearchTree {
     traverse(this.root);
     return data;
   }
+
+  // get count of values stored
+
+  getNodeCount() {}
 }
 
 // let tree = new BinarySearchTree();

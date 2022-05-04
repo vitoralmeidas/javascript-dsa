@@ -206,6 +206,14 @@ class BinarySearchTree {
       console.log(allValues[i]);
     }
   }
+
+  getMin() {
+    if (this.root == null) return -1;
+    while (this.root.left != null) {
+      this.root.left;
+    }
+    return this.root.value;
+  }
 }
 
 // let tree = new BinarySearchTree();

@@ -215,12 +215,20 @@ class BinarySearchTree {
     return this.root.value;
   }
 
-  getMax() {
+  getMax(root) {
     if (this.root == null) return -1;
     while (this.root.right != null) {
       this.root.right;
     }
     return this.root.value;
+  }
+
+  getHeight() {
+    if (this.root == null) return -1;
+    return Math.max(
+      this.getHeight(this.root.left),
+      this.getHeight(this.root.right) + 1
+    );
   }
 }
 

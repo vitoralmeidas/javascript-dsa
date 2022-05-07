@@ -215,7 +215,7 @@ class BinarySearchTree {
     return this.root.value;
   }
 
-  getMax(root) {
+  getMax() {
     if (this.root == null) return -1;
     while (this.root.right != null) {
       this.root.right;
@@ -223,12 +223,16 @@ class BinarySearchTree {
     return this.root.value;
   }
 
-  getHeight() {
-    if (this.root == null) return -1;
-    return Math.max(
-      this.getHeight(this.root.left),
-      this.getHeight(this.root.right) + 1
-    );
+  getHeight(node = this.root) {
+    if (node == null) return -1;
+    let leftHeight = this.getHeight(node.left);
+    let rightHeight = this.getHeight(node.right);
+
+    let heightDiference = leftHeight - rightHeight;
+    if (Math.abs(heightDiference) > 1) {
+      return -1;
+    }
+    return Math.max(leftHeight, rightHeight + 1);
   }
 }
 

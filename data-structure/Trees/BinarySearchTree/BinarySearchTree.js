@@ -214,6 +214,45 @@ class BinarySearchTree {
     }
     return this.root.value;
   }
+
+  getMax() {
+    if (this.root == null) return -1;
+    while (this.root.right != null) {
+      this.root.right;
+    }
+    return this.root.value;
+  }
+
+  /*
+  Height
+    Number of edges in longest path from root to a leaf node 
+    Height of a tree =  Height of root
+    Height of a leaf is 0
+
+    Depth of a node 
+      Number of edges in path from root to that node 
+      Depth of root is 0
+*/
+  getHeight(node = this.root) {
+    if (node == null) return -1;
+    let leftHeight = this.getHeight(node.left);
+    let rightHeight = this.getHeight(node.right);
+
+    let heightDifference = leftHeight - rightHeight;
+
+    if (Math.abs(heightDifference) > 1) {
+      return -1;
+    }
+    r;
+
+    return Math.max(leftHeight, rightHeight) + 1;
+  }
+
+  getHeight(node = this.root) {
+    if (node == null) return -1;
+
+    return Math.max(this.getHeight(node.left), this.getHeight(node.right)) + 1;
+  }
 }
 
 // let tree = new BinarySearchTree();

@@ -214,6 +214,14 @@ class BinarySearchTree {
     }
     return this.root.value;
   }
+
+  getMax() {
+    if (this.root == null) return -1;
+    while (this.root.right != null) {
+      this.root.right;
+    }
+    return this.root.value;
+  }
 }
 
 // let tree = new BinarySearchTree();

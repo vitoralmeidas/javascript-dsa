@@ -235,7 +235,52 @@ class BinarySearchTree {
     return Math.max(leftHeight, rightHeight + 1);
   }
 
-  removeNode(current, value) {}
+  removeNode(current, value) {
+    //base case, if the tree is empty
+
+    if (current === null) return current;
+
+    // when value is the same as current's value, this is the node to be deleted
+    if (value === current.value) {
+      // for case 1 and 2, without child or with onde child
+      if (current.left === null && current.right === null) {
+        return null;
+      } else if (current.left === null) {
+        return current.right;
+      } else if (current.right === null) {
+        return current.left;
+      } else {
+        //node with two children, get inorder successor
+        // smallest in the right subtree
+
+        let tempNode = this.kthSmallestNode(current.right);
+        current.value = tempNode.value;
+
+        //delete the inorder successor
+        current.right = this.removeNode(current.right, tempNode.value);
+        return current;
+      }
+    } else if (value < current.value) {
+      current.left = this.removeNode(current.left, value);
+      return current;
+    } else {
+      current.right = this.removeNode(current.right, value);
+      return current;
+    }
+  }
+
+  // this function calls removeNode
+  remove(value) {
+    this.root = this.removeNode(this.root, value);
+  }
+
+  //almost the same getMin(), but accept an argument
+  kthSmallestNode(node) {
+    while (!node.left === null) {
+      node = node.left;
+    }
+    return node;
+  }
 }
 
 // let tree = new BinarySearchTree();

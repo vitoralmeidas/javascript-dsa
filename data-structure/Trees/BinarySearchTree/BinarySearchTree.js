@@ -229,9 +229,9 @@ class BinarySearchTree {
     let rightHeight = this.getHeight(node.right);
 
     let heightDiference = leftHeight - rightHeight;
-    if (Math.abs(heightDiference) > 1) {
-      return -1;
-    }
+    // if (Math.abs(heightDiference) > 1) {
+    //   return -1;
+    // }
     return Math.max(leftHeight, rightHeight + 1);
   }
 

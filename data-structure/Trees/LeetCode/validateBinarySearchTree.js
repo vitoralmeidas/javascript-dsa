@@ -15,7 +15,6 @@ Valid BST
  * }
 
 */
-
 const isValidBST = (root, min = -Infinity, max = Infinity) => {
   if (!root) return true;
   if (!(root.val > min && root.val < max)) return false;

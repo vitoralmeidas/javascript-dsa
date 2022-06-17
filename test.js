@@ -1,19 +1,18 @@
-function maxConsecutiveSequenceLength(array) {
-  if (array.length === 0) return 0;
-  let maxLength = 0;
-  let currentLength = 1;
-  let sortedArray = array.sort((a, b) => a - b);
-  for (let i = 0; i < sortedArray.length; i++) {
-    if (sortedArray[i] === sortedArray[i + 1]) {
-      continue;
-    } else if (sortedArray[i] + 1 == sortedArray[i + 1]) {
-      currentLength++;
-    } else {
-      currentLength = 1;
-    }
-    maxLength = Math.max(maxLength, currentLength);
+function invertBinarySearchTree(tree) {
+  if (!tree) return null;
+  if (!tree.left && !tree.right) return tree;
+  if (!tree.left) {
+    tree.left = tree.right;
+    tree.right = null;
+  } else if (!tree.right) {
+    tree.right = tree.left;
+    tree.left = null;
+  } else {
+    const temp = tree.left;
+    tree.left = tree.right;
+    tree.right = temp;
   }
-  return maxLength;
+  invertBinarySearchTree(tree.left);
+  invertBinarySearchTree(tree.right);
+  return tree;
 }
-
-console.log(maxConsecutiveSequenceLength([1, 1, 2, 5, 3]));

@@ -1,6 +1,11 @@
 var levelOrder = function (root) {
+  // BFS Solution
+
   let q = [root],
     data = [];
+
+  //When the input is [], the root is null, and the q.length=1.
+  //You can add one line at the beginning if(root == null) return [];
   while (q[0]) {
     let qlen = q.length,
       row = [];

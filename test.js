@@ -1,16 +1,12 @@
-var levelOrder = function (root) {
-  let q = [root],
-    data = [];
-  while (q[0]) {
-    let qlen = q.length,
-      row = [];
-    for (let i = 0; i < qlen; i++) {
-      let curr = q.shift();
-      row.push(curr.val);
-      if (curr.left) q.push(curr.left);
-      if (curr.right) q.push(curr.right);
-    }
-    data.push(row);
-  }
-  return data;
+const kthSmallest = (root, k) => {
+  let data = [];
+
+  // dfs inOrder
+  const dfs = (root) => {
+    if (root.left) dfs(root.left);
+    data.push(root.val);
+    if (root.right) dfs(root.right);
+  };
+  dfs(root);
+  return data[k - 1];
 };

@@ -18,6 +18,7 @@ Return the number of good nodes in the binary t
  */
 
 const goodNodesCount = (root) => {
+  //preOrder <root><left><right>
   const dfs = (node, maxValue) => {
     if (!node) return 0;
     let res = 0;
@@ -29,4 +30,6 @@ const goodNodesCount = (root) => {
     res += dfs(node.right, maxValue);
     return res;
   };
+
+  dfs(root, root.val); //root.val = -Infinity
 };

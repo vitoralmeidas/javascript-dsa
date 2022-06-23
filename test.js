@@ -1,12 +1,23 @@
-const kthSmallest = (root, k) => {
-  let data = [];
+const rightSideView = (root) => {
+  let ans = [];
+  let q = [root];
 
-  // dfs inOrder
-  const dfs = (root) => {
-    if (root.left) dfs(root.left);
-    data.push(root.val);
-    if (root.right) dfs(root.right);
-  };
-  dfs(root);
-  return data[k - 1];
+  while (q.length) {
+    let rightSide = null;
+
+    let qLen = q.length;
+    for (let i = 0; i < qLen; i++) {
+      let node = q.shift();
+      if (node !== null) {
+        rightSide = node;
+        if (node.left) q.push(node.left);
+        if (node.right) q.push(node.right);
+      }
+
+      if (rightSide !== null) {
+        ans.push(rightSide.val);
+      }
+    }
+  }
+  return ans;
 };

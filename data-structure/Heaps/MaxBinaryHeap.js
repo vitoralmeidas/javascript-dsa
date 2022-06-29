@@ -69,4 +69,12 @@ class MaxBinaryHeap {
       idx = swap;
     }
   }
+
+  getSize() {
+    return this.values.length;
+  }
+
+  isEmpty() {
+    return this.values.length > 0;
+  }
 }

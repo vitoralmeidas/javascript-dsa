@@ -20,4 +20,12 @@ class MaxBinaryHeap {
       idx = parentIdx;
     }
   }
+
+  // extractMax() {
+  //   return this.sinkDown()
+  // }
+
+  // sinkDown({
+
+  // })
 }
